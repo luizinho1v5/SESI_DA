@@ -1,0 +1,13 @@
+    #grupo{
+            display: flex;
+            justify-content:center;
+        }
+        .grupo-id{
+            width: 200px;
+            height: 200px;
+            border-radius: 100%;
+            font-size: large;
+            color: #9aff9a;
+            border: 1px solid #000;
+            margin: 5px;
+        }
