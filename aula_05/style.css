@@ -1,0 +1,84 @@
+body {
+    margin: 0;
+    display: flex;
+    height: 100vh;
+    font-family: sans-serif;
+    background-color: white;
+}
+
+.lado-esquerdo {
+    flex: 1;
+    position: relative;
+    background-image: url("pug.png");
+    background-repeat: no-repeat;
+    background-size: 650px;
+    background-position: 50px center;
+}
+
+.fala-pug {
+    position: absolute;
+    top: 130px;
+    left: 270px;
+    font-size: 2rem;
+    color: black;
+    font-weight: bold;
+}
+
+.lado-direito {
+    flex: 1;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    background-color: white;
+}
+
+.conteudo-centralizado {
+    width: 100%;
+    max-width: 600px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.texto-grande {
+    font-size: 30px;
+    text-align: center;
+    margin: 0;
+    font-weight: bold;
+}
+
+.botao, .botao-destaque {
+    width: 300px;
+    padding: 12px;
+    border-radius: 25px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.botao {
+    border: 1px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.botao-destaque {
+    border: none;
+    background-color: #000;
+    color: white;
+    margin-top: 5px;
+}
+
+.icone {
+    width: 20px;
+    height: 20px;
+}
+
+.texto-ajuda {
+    font-size: 0.9rem;
+    color: #666;
+}
