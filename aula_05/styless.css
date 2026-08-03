@@ -99,9 +99,9 @@ body {
 filter: brightness(2);}
 .botoes-img2 { background-image: url(imagens/imagens/pirulito.jpg);
 filter: brightness(2) }
-.botoes-img3 { background-image: url(imagens/imagens/alcolico.jpg); 
+.botoes-img3 { background-image: url(imagens/imagens/tucano.jpg); 
 filter: brightness(2)}
-.botoes-img4 { background-image: url(imagens/imagens/tucano.jpg); 
+.botoes-img4 { background-image: url(imagens/imagens/alcolico.jpg); 
 filter: brightness(2)}
 
 .botoes-img1:hover, .botoes-img2:hover, .botoes-img3:hover, .botoes-img4:hover {
