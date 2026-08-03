@@ -1,5 +1,22 @@
+/* Variáveis de estilo das dicas */
+:root {
+    --primary: #4f46e5;
+    --primary-light: #e0e7ff;
+    --text-main: #1f2937;
+    --text-muted: #4b5563;
+    --bg-card: #ffffff;
+    --bg-body: #f8fafc;
+    --radius: 16px;
+}
 
-
+/* Estilo geral da página (removido o flex que quebrava tudo) */
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: #ffffff;
+    color: var(--text-main);
+    margin: 0;
+    padding: 0;
+}
 
 .parte-cima {
     flex: 1;
@@ -8,20 +25,19 @@
     margin-top: 0px;
     padding: 10px;
     position: relative;
-
 }
 
-.pfp{
-width: 90px;
-height: 90px;
-margin-left: 2%;
-margin-top: 17px;
-border-radius: 100%;
+.pfp {
+    width: 90px;
+    height: 90px;
+    margin-left: 2%;
+    margin-top: 17px;
+    border-radius: 100%;
 }
 
 .text {
-     position: absolute;   
-    top: 45%; /* Ajuste a porcentagem para subir ou descer */
+    position: absolute;   
+    top: 45%; 
     left: 50%;            
     transform: translate(-50%, -50%); 
     color: white;         
@@ -29,7 +45,7 @@ border-radius: 100%;
 }
 
 .text2 {
- position: absolute;   
+    position: absolute;   
     top: 45%;
     left: 95%;            
     transform: translate(-50%, -50%); 
@@ -50,27 +66,23 @@ border-radius: 100%;
     height: 70px;
     border-radius: 40px;
     text-align: left;
-    border: 2px solid black ;
+    border: 2px solid black;
     font-size: 30px;
     padding-left: 10px;
 }
 
-
 .botoes {
-display: flex;
-flex-direction: row;
-gap: 20px;
-justify-content: center;
-margin: 50px;
-
-
-
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    margin: 50px;
 }
-.botoes-img1 {
+
+.botoes-img1, .botoes-img2, .botoes-img3, .botoes-img4 {
     display: inline-block;
-     width: 170px;
+    width: 170px;
     height: 250px;
-    background-image: url(imagens/imagens/gato.jpg)  ;
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;
@@ -79,79 +91,22 @@ margin: 50px;
     border-radius: 20px;
     text-decoration: none;
     color: white;
-    font-size: 25px; ;
-    position: relative;
-}
-.botoes-img2 {
-    display: inline-block;
-     width: 170px;
-    height: 250px;
-    background-image: url(imagens/imagens/cachorro.jpg)  ;
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    cursor: pointer;
-    transition: transform 0.2s;
-    border-radius: 20px;
-    text-decoration: none;
-    color: white;
-    font-size: 25px; ;
+    font-size: 25px;
     position: relative;
 }
 
-.botoes-img3 {
-    display: inline-block;
-     width: 170px;
-    height: 250px;
-    background-image:url(imagens/imagens/ave.png)   ;
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    cursor: pointer;
-    transition: transform 0.2s;
-    border-radius: 20px;
-    text-decoration: none;
-    color: white;
-    font-size: 25px; ;
-    position: relative;
-}
+.botoes-img1 { background-image: url(imagens/imagens/chad.jpg); 
+filter: brightness(2);}
+.botoes-img2 { background-image: url(imagens/imagens/pirulito.jpg);
+filter: brightness(2) }
+.botoes-img3 { background-image: url(imagens/imagens/alcolico.jpg); 
+filter: brightness(2)}
+.botoes-img4 { background-image: url(imagens/imagens/tucano.jpg); 
+filter: brightness(2)}
 
-.botoes-img4 {
-    display: inline-block;
-     width: 170px;
-    height: 250px;
-    background-image:url(imagens/imagens/peixe.png) ;
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    cursor: pointer;
-    transition: transform 0.2s;
-    border-radius: 20px;
-    text-decoration: none;
-    color: white;
-    font-size: 25px; ;
-    position: relative;
-}
-
-
-.botoes-img1:hover {
-transform: scale(1.1);
-  filter: brightness(1.1);
-}
-
-.botoes-img2:hover {
-transform: scale(1.1);
-  filter: brightness(1.1);
-}
-
-.botoes-img3:hover {
-transform: scale(1.1);
-  filter: brightness(1.1);
-}
-
-.botoes-img4:hover {
-transform: scale(1.1);
-  filter: brightness(1.1);
+.botoes-img1:hover, .botoes-img2:hover, .botoes-img3:hover, .botoes-img4:hover {
+    transform: scale(1.1);
+    filter: brightness(1.1);
 }
 
 .textos {
@@ -162,7 +117,7 @@ transform: scale(1.1);
 }
 
 .parte-baixo {
-    flex: 1 ;
+    flex: 1;
     background-color: black;
     height: 350px;
     display: flex;
@@ -184,26 +139,26 @@ transform: scale(1.1);
 }
 
 .textoz {
-  flex-direction: column;
-      display: flex;
+    flex-direction: column;
+    display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .gato {
-        width: 40%;
-        height: 80%;
-        background-image: url(imagens/imagens/gato_laranja.jpg) ;
-        background-size: 100%;
-        background-repeat: no-repeat;
-        border-radius: 20px;
-        margin-right: 25px;
+    width: 40%;
+    height: 90%;
+    background-image: url(imagens/imagens/aura.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    margin-right: 25px;
 }
 
 .textt {
-margin-right: 65px;
-margin-left: 50px;
-margin-bottom: 20px;
+    margin-right: 65px;
+    margin-left: 50px;
+    margin-bottom: 20px;
 }
 
 .button {
@@ -214,10 +169,99 @@ margin-bottom: 20px;
     color: white;
     margin-bottom: 60px;
     font-size: 20px;
+    cursor: pointer;
+    border: none;
 }
 
 .button:hover {
     transition: 1s;
     color: rgb(5, 5, 5);
     background-color: aliceblue;
+}
+
+/* Estilização isolada para a seção de Dicas */
+.tips-section-wrapper {
+    background-color: var(--bg-body);
+    padding: 50px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.pet-tips-container {
+    background: var(--bg-card);
+    width: 100%;
+    max-width: 650px;
+    padding: 40px;
+    border-radius: var(--radius);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+    box-sizing: border-box;
+}
+
+.pet-tips-container h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-top: 0;
+    margin-bottom: 30px;
+    text-align: center;
+    letter-spacing: -0.025em;
+}
+
+.tips-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.tip-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px;
+    background: var(--bg-body);
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tip-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border-color: #cbd5e1;
+}
+
+.tip-icon {
+    background: var(--primary-light);
+    color: var(--primary);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.tip-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.tip-title {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--primary);
+}
+
+.tip-description {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
 }
