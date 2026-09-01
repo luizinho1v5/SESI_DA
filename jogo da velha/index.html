@@ -1,23 +1,57 @@
 <!DOCTYPE html>
-<html lang="PT-Br">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jogo da Velha</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
-<link rel="stylesheet" href="style.css">
+
 <body>
-    <div class = "Text1"><h1>Jogo Da Velha</h1></div>
-    <div class = "tabuleiro">
-        <div class = "casa"></div>
-        <div class = "casa"></div>
-        <div class = "casa"></div>
-        <div class = "casa"></div>
-        <div class = "casa"></div>
-        <div class = "casa"></div>
-        <div class = "casa"></div>
-        <div class = "casa"></div>
-        <div class = "casa"></div>
+
+    <h1>Jogo da Velha</h1>
+
+    <div class="placar">
+        <div>
+            <span class="x">X</span>
+            <p id="pontosX">0</p>
+        </div>
+
+        <span class="versus">X</span>
+
+        <div>
+            <span class="o">O</span>
+            <p id="pontosO">0</p>
+        </div>
     </div>
+
+    <div class="modo">
+        <button id="doisJogadores">2 Jogadores</button>
+        <button id="contraComputador">Contra Computador</button>
+    </div>
+
+    <p id="mensagem">Vez do jogador X</p>
+
+    <div class="tabuleiro">
+        <div class="casa"></div>
+        <div class="casa"></div>
+        <div class="casa"></div>
+
+        <div class="casa"></div>
+        <div class="casa"></div>
+        <div class="casa"></div>
+
+        <div class="casa"></div>
+        <div class="casa"></div>
+        <div class="casa"></div>
+    </div>
+
+    <button id="reiniciar">Reiniciar Jogo</button>
+
+    <script src="script.js"></script>
+
 </body>
+
 </html>
