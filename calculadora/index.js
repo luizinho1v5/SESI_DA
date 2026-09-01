@@ -1,31 +1,185 @@
-const campo1 = document.getElementById("campo1");
-const campo2 = document.getElementById("campo2");
-const resultado = document.getElementsByTagName("h1")[0];
-function somaDeDoisValores() {
+const resultado = document.getElementById("resultado");
+const expressao = document.getElementById("expressao");
 
-    var soma = Number(campo1.value) + Number(campo2.value);
+let numeroAtual = "";
+let numeroAnterior = "";
+let operador = "";
+let resultadoAnterior = false;
 
-    resultado.innerHTML = "Resultado: " + soma;
+
+function adicionarNumero(numero) {
+
+
+if (resultadoAnterior) {
+    numeroAtual = "";
+    expressao.textContent = "";
+    resultadoAnterior = false;
+}
+
+
+if (numeroAtual.length >= 12) {
+    return;
+}
+
+if (numeroAtual === "0") {
+    numeroAtual = numero;
+} else {
+    numeroAtual += numero;
+}
+
+resultado.textContent = numeroAtual;
+
 
 }
-function subtrairDoisValores() {
 
-    var subtracao = Number(campo1.value) - Number(campo2.value);
+function adicionarDecimal() {
 
-    resultado.innerHTML = "Resultado: " + subtracao;
+if (resultadoAnterior) {
+    numeroAtual = "";
+    expressao.textContent = "";
+    resultadoAnterior = false;
+}
+
+if (numeroAtual === "") {
+    numeroAtual = "0.";
+}
+
+if (!numeroAtual.includes(".")) {
+    numeroAtual += ".";
+}
+
+resultado.textContent = numeroAtual;
+
 
 }
-function multiplicarDoisValores() {
 
-    var multiplicacao = Number(campo1.value) * Number(campo2.value);
+function escolherOperador(novoOperador) {
 
-    resultado.innerHTML = "Resultado: " + multiplicacao;
+if (numeroAtual === "" && numeroAnterior === "") {
+    return;
+}
+
+if (numeroAnterior !== "" && numeroAtual !== "") {
+    calcular();
+}
+
+numeroAnterior = numeroAtual;
+numeroAtual = "";
+operador = novoOperador;
+
+expressao.textContent = numeroAnterior + " " + operador;
+
 
 }
-function dividirDoisValores() {
 
-    var divisao = Number(campo1.value) / Number(campo2.value);
+function calcular() {
 
-    resultado.innerHTML = "Resultado: " + divisao;
+if (numeroAnterior === "" || numeroAtual === "" || operador === "") {
+    return;
+}
+
+const primeiroNumero = Number(numeroAnterior);
+const segundoNumero = Number(numeroAtual);
+
+let resultadoFinal;
+
+switch (operador) {
+
+    case "+":
+        resultadoFinal = primeiroNumero + segundoNumero;
+        break;
+
+    case "−":
+        resultadoFinal = primeiroNumero - segundoNumero;
+        break;
+
+    case "×":
+        resultadoFinal = primeiroNumero * segundoNumero;
+        break;
+
+    case "÷":
+
+        if (segundoNumero === 0) {
+            resultado.textContent = "Erro";
+            expressao.textContent = "Não é possível dividir por 0";
+
+            numeroAtual = "";
+            numeroAnterior = "";
+            operador = "";
+
+            return;
+        }
+
+        resultadoFinal = primeiroNumero / segundoNumero;
+        break;
+}
+
+resultadoFinal = Number(resultadoFinal.toFixed(10));
+
+expressao.textContent =
+    primeiroNumero + " " +
+    operador + " " +
+    segundoNumero + " =";
+
+resultado.textContent = resultadoFinal;
+
+numeroAtual = String(resultadoFinal);
+numeroAnterior = "";
+operador = "";
+
+resultadoAnterior = true;
+
 
 }
+
+function limpar() {
+
+numeroAtual = "";
+numeroAnterior = "";
+operador = "";
+resultadoAnterior = false;
+
+resultado.textContent = "0";
+expressao.textContent = "";
+
+
+}
+
+document.addEventListener("keydown", function(event) {
+
+const tecla = event.key;
+
+if (tecla >= "0" && tecla <= "9") {
+    adicionarNumero(tecla);
+}
+
+else if (tecla === ".") {
+    adicionarDecimal();
+}
+
+else if (tecla === "+") {
+    escolherOperador("+");
+}
+
+else if (tecla === "-") {
+    escolherOperador("−");
+}
+
+else if (tecla === "*") {
+    escolherOperador("×");
+}
+
+else if (tecla === "/") {
+    escolherOperador("÷");
+}
+
+else if (tecla === "Enter" || tecla === "=") {
+    calcular();
+}
+
+else if (tecla === "Escape" || tecla.toLowerCase() === "c") {
+    limpar();
+}
+
+
+});

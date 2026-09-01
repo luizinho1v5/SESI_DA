@@ -1,39 +1,45 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!DOCTYPE html> <html lang="pt-BR"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora JavaScript</title>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
 
-    <title>Calculadora JavaScript</title>
+</head> <body>
+<div class="calculadora">
 
-    <link rel="stylesheet" href="style.css">
-</head>
+    <h2>Calculadora</h2>
+    
+    <div class="visor">
+        <span id="expressao"></span>
+        <h1 id="resultado">0</h1>
+    </div>
+    <div class="botoes">
 
-<body>
+        <button class="limpar" onclick="limpar()">C</button>
+        <button class="operador" onclick="escolherOperador('÷')">÷</button>
+        <button class="operador" onclick="escolherOperador('×')">×</button>
+        <button class="operador" onclick="escolherOperador('−')">−</button>
 
-    <div class="calculadora">
+        <button onclick="adicionarNumero('7')">7</button>
+        <button onclick="adicionarNumero('8')">8</button>
+        <button onclick="adicionarNumero('9')">9</button>
+        <button class="operador" onclick="escolherOperador('+')">+</button>
 
-        <h2>Calculadora</h2>
+        <button onclick="adicionarNumero('4')">4</button>
+        <button onclick="adicionarNumero('5')">5</button>
+        <button onclick="adicionarNumero('6')">6</button>
+        <button class="igual" onclick="calcular()">=</button>
 
-        <div class="campos">
-            <input id="campo1" type="number" placeholder="Primeiro valor">
-            <input id="campo2" type="number" placeholder="Segundo valor">
-        </div>
+        <button onclick="adicionarNumero('1')">1</button>
+        <button onclick="adicionarNumero('2')">2</button>
+        <button onclick="adicionarNumero('3')">3</button>
 
-        <div class="botoes">
-            <button onclick="somaDeDoisValores()">+</button>
-            <button onclick="subtrairDoisValores()">−</button>
-            <button onclick="multiplicarDoisValores()">×</button>
-            <button onclick="dividirDoisValores()">÷</button>
-        </div>
-
-        <h1>Resultado: 0</h1>
+        <button onclick="adicionarNumero('0')" class="zero">0</button>
+        <button onclick="adicionarDecimal()">.</button>
 
     </div>
 
-    <script src="index.js"></script>
+</div>
 
-</body>
+<script src="index.js"></script>
 
-</html>
+</body> </html>
