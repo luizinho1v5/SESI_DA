@@ -1,0 +1,75 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 40px;
+    background-color: #fafbfc; /* Fundo levemente acinzentado/gelo */
+    color: #24292e;
+}
+
+label {
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 4px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+input {
+    display: block;
+    margin-bottom: 15px;
+    padding: 8px;
+    width: 260px;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: #ffffff;
+}
+
+input:focus {
+    border-color: #0366d6;
+    outline: none;
+    box-shadow: 0 0 3px rgba(3, 102, 214, 0.3);
+}
+
+button {
+    padding: 8px 16px;
+    cursor: pointer;
+    margin-top: 5px;
+    background-color: #f1f8ff;
+    color: #0366d6;
+    border: 1px solid #c8e1ff;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+button:hover {
+    background-color: #ddeffd;
+    border-color: #b8d9ff;
+}
+
+a {
+    display: block;
+    margin-top: 12px;
+    color: #0366d6;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+h1 {
+    font-size: 20px;
+    margin-top: 20px;
+    color: #111;
+}
+
+.perfil-card {
+    margin: 15px 0;
+    padding: 10px;
+    background: #ffffff;
+    border: 1px solid #e1e4e8;
+    border-radius: 4px;
+    width: 250px;
+}
