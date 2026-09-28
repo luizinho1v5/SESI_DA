@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Papelaria Tinta | Loja virtual</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ========== TELA DE LOGIN (3 formulários, o JS mostra um por vez) ========== -->
+  <section id="tela-login">
+    <main class="caixa-login">
+      <h1>Papelaria Tinta</h1>
+
+      <form id="form-entrar">
+        <h2>Entrar</h2>
+        <label>E-mail <input type="email" id="entrar-email" required></label>
+        <label>Senha <input type="password" id="entrar-senha" required></label>
+        <p class="msg" id="msg-entrar"></p>
+        <button type="submit">Entrar</button>
+        <p class="troca">
+          <a href="#" onclick="mostrar('cadastro'); return false;">Criar uma conta</a><br>
+          <a href="#" onclick="mostrar('senha'); return false;">Trocar minha senha</a>
+        </p>
+      </form>
+
+      <form id="form-cadastro" hidden>
+        <h2>Criar conta</h2>
+        <label>Nome <input type="text" id="cad-nome" required></label>
+        <label>E-mail <input type="email" id="cad-email" required></label>
+        <label>Senha (mínimo 6 caracteres) <input type="password" id="cad-senha" required></label>
+        <label>Confirmar senha <input type="password" id="cad-confirmar" required></label>
+        <p class="msg" id="msg-cadastro"></p>
+        <button type="submit">Cadastrar</button>
+        <p class="troca"><a href="#" onclick="mostrar('entrar'); return false;">Já tenho conta</a></p>
+      </form>
+
+      <form id="form-senha" hidden>
+        <h2>Trocar senha</h2>
+        <label>E-mail <input type="email" id="troca-email" required></label>
+        <label>Senha atual <input type="password" id="troca-atual" required></label>
+        <label>Nova senha <input type="password" id="troca-nova" required></label>
+        <label>Confirmar nova senha <input type="password" id="troca-confirmar" required></label>
+        <p class="msg" id="msg-senha"></p>
+        <button type="submit">Salvar nova senha</button>
+        <p class="troca"><a href="#" onclick="abrirSistema(); return false;">Voltar</a></p>
+      </form>
+    </main>
+  </section>
+
+  <!-- ========== TELA DA LOJA (só aparece com o usuário logado) ========== -->
+  <div id="tela-loja" hidden>
+    <header class="topo">
+      <h1>Papelaria Tinta</h1>
+      <div class="topo-direita">
+        <span id="saudacao"></span>
+        <a href="#" onclick="mostrar('senha'); mostrarTela('login'); return false;">Trocar senha</a>
+        <button class="sair" onclick="sair()">Sair</button>
+        <p id="contador">Carrinho: 0 itens</p>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section>
+        <h2>Produtos</h2>
+        <div id="produtos" class="grade"></div>
+      </section>
+
+      <aside class="carrinho">
+        <h2>Seu carrinho</h2>
+        <ul id="itens"></ul>
+        <p class="total">Total: <strong id="total">R$ 0,00</strong></p>
+        <button class="secundario" onclick="esvaziar()">Esvaziar carrinho</button>
+        <button onclick="finalizar()">Finalizar compra</button>
+      </aside>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

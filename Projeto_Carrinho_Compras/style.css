@@ -1,0 +1,147 @@
+/* Cores em variáveis: mudar aqui muda o site inteiro */
+:root {
+  --fundo: #f2f5f7;
+  --texto: #14213d;
+  --azul: #2f4bd8;
+  --amarelo: #ffd23f;
+  --borda: #d5dce3;
+}
+
+* { box-sizing: border-box; }
+/* Garante que o atributo "hidden" sempre esconde o elemento */
+[hidden] { display: none !important; }
+
+body {
+  margin: 0;
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+  background: var(--fundo);
+  color: var(--texto);
+}
+
+/* ---------- Botões e formulários (usados nas duas telas) ---------- */
+button {
+  width: 100%;
+  padding: 10px 12px;
+  border: 0;
+  border-radius: 6px;
+  background: var(--azul);
+  color: #fff;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+button:hover { background: #2239b0; }
+button:focus-visible { outline: 3px solid var(--amarelo); outline-offset: 2px; }
+
+label { display: block; margin-bottom: 12px; font-size: 0.9rem; }
+input {
+  display: block;
+  width: 100%;
+  margin-top: 4px;
+  padding: 10px;
+  border: 1px solid var(--borda);
+  border-radius: 6px;
+  font-size: 1rem;
+}
+input:focus-visible { outline: 3px solid var(--amarelo); outline-offset: 1px; }
+
+/* ---------- Tela de login ---------- */
+#tela-login { display: grid; place-items: center; min-height: 100vh; padding: 16px; }
+.caixa-login {
+  width: 100%;
+  max-width: 380px;
+  padding: 24px;
+  background: #fff;
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+}
+.caixa-login h1 { margin: 0 0 16px; font-size: 1.4rem; color: var(--azul); }
+.caixa-login h2 { margin: 0 0 12px; font-size: 1.1rem; }
+.msg { min-height: 1.2em; margin: 0 0 12px; font-size: 0.9rem; }
+.msg.erro { color: #b3261e; }
+.msg.ok { color: #1b7a3d; }
+.troca { margin-top: 16px; font-size: 0.9rem; line-height: 1.8; }
+.troca a { color: var(--azul); }
+
+/* ---------- Topo da loja ---------- */
+.topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background: var(--azul);
+  color: #fff;
+}
+.topo h1 { margin: 0; font-size: 1.4rem; }
+.topo-direita { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.topo-direita a { color: #fff; font-size: 0.9rem; }
+.sair { width: auto; background: transparent; border: 1px solid #fff; }
+.sair:hover { background: rgba(255, 255, 255, 0.15); }
+#contador {
+  margin: 0;
+  padding: 6px 14px;
+  border-radius: 20px;
+  background: var(--amarelo);
+  color: var(--texto);
+  font-weight: bold;
+}
+
+/* ---------- Produtos e carrinho ---------- */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 24px;
+  max-width: 1100px;
+  margin: 24px auto;
+  padding: 0 16px;
+}
+.grade {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 16px;
+}
+.produto {
+  background: #fff;
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+  padding: 16px;
+  text-align: center;
+}
+.icone { font-size: 3rem; }
+.produto h3 { margin: 8px 0 4px; font-size: 1rem; }
+.preco { margin: 0 0 12px; font-weight: bold; }
+
+.carrinho {
+  align-self: start;
+  position: sticky;
+  top: 16px;
+  padding: 16px;
+  background: #fff;
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+}
+.carrinho ul { margin: 0; padding: 0; list-style: none; }
+.carrinho li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--borda);
+}
+.qtd { display: flex; align-items: center; gap: 6px; }
+.qtd button { width: 28px; padding: 4px; }
+.vazio { color: #6b7785; }
+.total { font-size: 1.1rem; }
+.secundario {
+  margin-bottom: 8px;
+  background: transparent;
+  color: var(--texto);
+  border: 1px solid var(--borda);
+}
+.secundario:hover { background: var(--fundo); }
+
+/* Celular: uma coluna só */
+@media (max-width: 760px) {
+  .layout { grid-template-columns: 1fr; }
+  .carrinho { position: static; }
+}
